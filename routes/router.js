@@ -9,6 +9,7 @@ const adminController = require("../controllers/admin_controller");
 const uploadtraineeController = require("../controllers/upload_trainee_controller");
 const uploadrecipeController = require("../controllers/upload_recipe_controller");
 const recipeController = require("../controllers/recipe_controller");
+const nutritionController = require("../controllers/nutrition_controller");
 
 router.post("/api/person/setpass", personContrller.setpass); //Forget Password API set password if Email true //ForgetPass
 router.post("/api/updatePerson/", personContrller.updatePersonData); // Update person Data
@@ -50,5 +51,11 @@ router.post("/api/addtrainee_id", traineeController.addtrainee_id_from_person);
 router.get("/gym", userController.getAllData);
 router.post("/addgym", userController.addGym);
 router.post("/deletegym", userController.deleteGym);
+
+// Nutrition Plan Section
+router.post("/api/addNutrition", nutritionController.addNutrition); // Add nutritop
+router.post("/api/deleteNutrition", nutritionController.deleteNutrition); // delete nutrition
+router.post("/api/updateNutrition", nutritionController.updateNutrition); // delete nutrition
+router.post("/api/getNutrition", nutritionController.getNutrition); // delete nutrition
 
 module.exports = router;
